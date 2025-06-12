@@ -1,0 +1,9 @@
+node_modules/
+.env
+mongo_data/
+.DS_Store
+*.log
+# VSCode
+.vscode/
+# Sistema operativo
+Thumbs.db
