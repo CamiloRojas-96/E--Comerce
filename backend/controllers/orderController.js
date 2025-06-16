@@ -1,23 +1,12 @@
 const Order = require('../models/Order');
 
-// Crear una nueva orden
-exports.createOrder = async (req, res) => {
-  try {
-    const newOrder = new Order(req.body);
-    const savedOrder = await newOrder.save();
-    res.status(201).json(savedOrder);
-  } catch (error) {
-    res.status(400).json({ message: 'Error al crear la orden', error });
-  }
-};
-
 // Obtener todas las órdenes
 exports.getOrders = async (req, res) => {
   try {
     const orders = await Order.find().populate('user').populate('orderItems.product');
     res.json(orders);
   } catch (error) {
-    res.status(500).json({ message: 'Error al obtener las órdenes' });
+    res.status(500).json({ message: 'Error al obtener órdenes' });
   }
 };
 
@@ -32,6 +21,17 @@ exports.getOrderById = async (req, res) => {
   }
 };
 
+// Crear una orden
+exports.createOrder = async (req, res) => {
+  try {
+    const newOrder = new Order(req.body);
+    const savedOrder = await newOrder.save();
+    res.status(201).json(savedOrder);
+  } catch (error) {
+    res.status(400).json({ message: 'Error al crear la orden', error });
+  }
+};
+
 // Actualizar una orden
 exports.updateOrder = async (req, res) => {
   try {
@@ -39,7 +39,7 @@ exports.updateOrder = async (req, res) => {
     if (!updatedOrder) return res.status(404).json({ message: 'Orden no encontrada' });
     res.json(updatedOrder);
   } catch (error) {
-    res.status(400).json({ message: 'Error al actualizar la orden' });
+    res.status(400).json({ message: 'Error al actualizar orden' });
   }
 };
 
@@ -50,6 +50,6 @@ exports.deleteOrder = async (req, res) => {
     if (!deletedOrder) return res.status(404).json({ message: 'Orden no encontrada' });
     res.json({ message: 'Orden eliminada' });
   } catch (error) {
-    res.status(400).json({ message: 'Error al eliminar la orden' });
+    res.status(400).json({ message: 'Error al eliminar orden' });
   }
 };
