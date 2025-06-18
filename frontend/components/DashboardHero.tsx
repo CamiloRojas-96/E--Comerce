@@ -39,15 +39,15 @@ const DashboardHero = () => {
 	const slide = heroSlides[current];
 
 	return (
-		<section className="relative w-full bg-[#01FF04] text-[#111111] rounded-lg shadow-lg mb-10 flex flex-col md:flex-row items-center overflow-hidden">
+		<section className="relative w-full bg-medium-blue text-dark-blue rounded-lg shadow-lg mb-10 flex flex-col md:flex-row items-center overflow-hidden">
 			<div className="flex-1 p-8">
-				<h2 className="text-3xl md:text-4xl font-extrabold mb-2 drop-shadow-lg">
+				<h2 className="text-3xl md:text-4xl font-extrabold mb-2 drop-shadow-lg text-dark-blue">
 					{slide.title}
 				</h2>
-				<p className="text-lg font-semibold mb-4">{slide.description}</p>
+				<p className="text-lg font-semibold mb-4 text-dark-blue">{slide.description}</p>
 				<a
 					href={slide.link}
-					className="inline-block bg-[#111111] text-[#01FF04] px-6 py-2 rounded font-bold shadow hover:bg-[#1BA1F1] hover:text-white transition"
+					className="inline-block bg-dark-blue text-light px-6 py-2 rounded font-bold shadow hover:bg-primary hover:text-dark-blue transition"
 				>
 					{slide.cta}
 				</a>
@@ -61,13 +61,13 @@ const DashboardHero = () => {
 			</div>
 			<button
 				onClick={prevSlide}
-				className="absolute left-2 top-1/2 -translate-y-1/2 bg-[#111111] text-[#01FF04] rounded-full p-2 shadow hover:bg-[#1BA1F1] transition"
+				className="absolute left-2 top-1/2 -translate-y-1/2 bg-dark-blue text-light rounded-full p-2 shadow hover:bg-primary transition"
 			>
 				&#8592;
 			</button>
 			<button
 				onClick={nextSlide}
-				className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#111111] text-[#01FF04] rounded-full p-2 shadow hover:bg-[#1BA1F1] transition"
+				className="absolute right-2 top-1/2 -translate-y-1/2 bg-dark-blue text-light rounded-full p-2 shadow hover:bg-primary transition"
 			>
 				&#8594;
 			</button>

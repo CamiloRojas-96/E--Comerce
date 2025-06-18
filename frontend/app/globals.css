@@ -1,23 +1,28 @@
 @import "tailwindcss/preflight";
 @import "tailwindcss/utilities";
-
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #18181b;
-  --primary: #2563eb;
-  --secondary: #fbbf24;
-  --accent: #059669;
+  --background: #EAEFEF;
+  --foreground: #333446;
+  --primary: #7F8CAA;
+  --secondary: #B8CFCE;
+  --accent: #333446;
+
+  /* Paleta de colores específica */
+  --color-dark-blue: #333446;
+  --color-medium-blue: #7F8CAA;
+  --color-mint: #B8CFCE;
+  --color-light: #EAEFEF;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #18181b;
-    --foreground: #f5f7fa;
-    --primary: #60a5fa;
-    --secondary: #f59e42;
-    --accent: #10b981;
+    --background: #333446;
+    --foreground: #EAEFEF;
+    --primary: #7F8CAA;
+    --secondary: #B8CFCE;
+    --accent: #EAEFEF;
   }
 }
 
@@ -26,3 +31,20 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Utilidades para usar la paleta en componentes */
+.bg-primary { background-color: var(--primary) !important; }
+.bg-secondary { background-color: var(--secondary) !important; }
+.bg-accent { background-color: var(--accent) !important; }
+.bg-dark-blue { background-color: var(--color-dark-blue) !important; }
+.bg-medium-blue { background-color: var(--color-medium-blue) !important; }
+.bg-mint { background-color: var(--color-mint) !important; }
+.bg-light { background-color: var(--color-light) !important; }
+
+.text-primary { color: var(--primary) !important; }
+.text-secondary { color: var(--secondary) !important; }
+.text-accent { color: var(--accent) !important; }
+.text-dark-blue { color: var(--color-dark-blue) !important; }
+.text-medium-blue { color: var(--color-medium-blue) !important; }
+.text-mint { color: var(--color-mint) !important; }
+.text-light { color: var(--color-light) !important; }
