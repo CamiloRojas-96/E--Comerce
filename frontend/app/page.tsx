@@ -7,10 +7,18 @@ import api from "../utils/api";
 import { useEffect, useState } from "react";
 
 interface Product {
-  _id: string;
+  _id?: string;
   name: string;
+  description?: string;
+  image?: string;
+  category: string;
+  set: string;
+  edition?: string;
+  language?: string;
   price: number;
-  image: string;
+  stock: number;
+  condition?: string;
+  releaseDate?: string;
 }
 
 export default function Home() {
@@ -88,7 +96,10 @@ export default function Home() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         {products.map((product) => (
           <div key={product._id} className="relative">
-            <ProductCard {...product} />
+            <ProductCard
+              {...product}
+              image={product.image || ""}
+            />
             <div className="absolute top-2 right-2 flex gap-2">
               <button
                 onClick={() => handleEdit(product)}
@@ -97,7 +108,7 @@ export default function Home() {
                 Editar
               </button>
               <button
-                onClick={() => handleDelete(product._id)}
+                onClick={() => handleDelete(product._id!)}
                 className="bg-[#01FF04] text-[#111111] px-2 py-1 rounded font-semibold shadow border border-[#01FF04] hover:bg-[#1BA1F1]"
               >
                 Eliminar
