@@ -82,7 +82,7 @@ const HomeClient = () => {
     (product.category && product.category.toLowerCase().includes(search.toLowerCase()))
   );
 
-  if (loading) return <main className="p-8 text-center">Cargando productos...</main>;
+  if (loading) return <main className="p-8 text-center">Loading products...</main>;
   if (error) return <main className="p-8 text-center text-red-600">{error}</main>;
 
   return (
@@ -95,14 +95,14 @@ const HomeClient = () => {
           </div>
           <HeroBanner />
           <PromoBanner />
-          <h1 className="text-2xl sm:text-3xl font-bold mb-2 text-dark-blue text-center">Catálogo de Productos</h1>
-          <p className="mb-6 sm:mb-8 text-center text-medium-blue text-base sm:text-lg">Explora y administra los productos de tu tienda</p>
+          <h1 className="text-2xl sm:text-3xl font-bold mb-2 text-dark-blue text-center">Product Catalog</h1>
+          <p className="mb-6 sm:mb-8 text-center text-medium-blue text-base sm:text-lg">Explore and manage your store's products</p>
           <div className="mb-4 text-center">
             <button
               onClick={handleAdd}
               className="bg-primary text-dark-blue px-4 sm:px-6 py-2 rounded-lg hover:bg-medium-blue hover:text-light transition font-semibold shadow border border-mint"
             >
-              Agregar Producto
+              Add Product
             </button>
           </div>
           {showForm && (
@@ -121,13 +121,13 @@ const HomeClient = () => {
                     onClick={() => handleEdit(product)}
                     className="bg-light text-dark-blue px-2 py-1 rounded font-semibold shadow border border-mint hover:bg-mint hover:text-dark-blue transition text-xs sm:text-sm"
                   >
-                    Editar
+                    Edit
                   </button>
                   <button
                     onClick={() => handleDelete(product._id!)}
                     className="bg-mint text-dark-blue px-2 py-1 rounded font-semibold shadow border border-mint hover:bg-medium-blue hover:text-light transition text-xs sm:text-sm"
                   >
-                    Eliminar
+                    Delete
                   </button>
                 </div>
               </div>

@@ -32,7 +32,7 @@ Aplicación web de e-commerce desarrollada con Next.js y Node.js, enfocada en la
    ```bash
    npm run dev
    ```
-4. Accede a [http://localhost:3000](http://localhost:3000)
+4. Accede a [http://localhost:3001](http://localhost:3001)
 
 ## Pruebas end-to-end (Cypress)
 1. Instala Cypress:
@@ -52,4 +52,3 @@ Aplicación web de e-commerce desarrollada con Next.js y Node.js, enfocada en la
 
 ---
 
-Proyecto ideal para coleccionistas, tiendas o portafolios relacionados con TCG.
